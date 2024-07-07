@@ -90,4 +90,8 @@ new SimpleLightbox('.gallery a', {
   captions: true,
   captionsData: 'alt',
   captionDelay: 250,
+  close: true,
+  className: 'simple-lightbox',
+  doubleTapZoom: 2,
+  scrollZoom: true,
 });
