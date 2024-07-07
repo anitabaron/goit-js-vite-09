@@ -1,6 +1,5 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
-// import SimpleLightbox from 'simplelightbox/dist/simple-lightbox.esm';
 
 const images = [
   {
@@ -68,22 +67,27 @@ const images = [
   },
 ];
 
-const element = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery');
 
-const fragment = document.createDocumentFragment();
+const galleryMarkup = images
+  .map(
+    ({ preview, original, description }) => `
+    <li class="gallery-item">
+      <a class="gallery-link" href="${original}">
+        <img
+          class="gallery-image"
+          src="${preview}"
+          alt="${description}"
+        />
+      </a>
+    </li>`
+  )
+  .join('');
 
-images.forEach(image => {
-  const galleryListElement = document.createElement('li');
-  galleryListElement.classList = 'gallery-item';
-  const galleryLink = document.createElement('a');
-  galleryLink.classList = 'gallery-link';
-  galleryLink.href = image.original;
-  galleryListElement.appendChild(galleryLink);
-  const galleryImage = document.createElement('img');
-  galleryImage.classList = 'gallery-image';
-  galleryImage.src = image.preview;
-  galleryImage.alt = image.description;
-  galleryLink.appendChild(galleryImage);
-  fragment.appendChild(galleryListElement);
+gallery.innerHTML = galleryMarkup;
+
+new SimpleLightbox('.gallery a', {
+  captions: true,
+  captionsData: 'alt',
+  captionDelay: 250,
 });
-element.appendChild(fragment);
