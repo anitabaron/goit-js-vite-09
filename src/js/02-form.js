@@ -30,6 +30,7 @@ function submitDone(event) {
     });
   }
   form.reset();
+  localStorage.removeItem(localStorageKey);
 }
 
 const saveFormData = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};

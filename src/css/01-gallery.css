@@ -1,3 +1,7 @@
+.gallery-container {
+  max-width: 1128px;
+  margin: 0 auto;
+}
 .gallery {
   display: flex;
   flex-direction: row;
@@ -17,4 +21,9 @@
 
 .gallery-image:hover {
   transform: scale(1.04);
+}
+
+.simpleLightboxGallery {
+  background: rgba(46, 47, 66, 0.8);
+  color: #fff;
 }
