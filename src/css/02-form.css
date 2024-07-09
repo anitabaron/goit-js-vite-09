@@ -17,6 +17,7 @@ body {
   background-color: #fff;
   border: 1px solid #808080;
   border-radius: 8px;
+  margin: 0 auto;
 }
 
 .feedback-form label {
