@@ -12,7 +12,6 @@ body {
 .feedback-form {
   display: flex;
   flex-direction: column;
-  /* display: block; */
   padding: 24px;
   max-width: 408px;
   background-color: #fff;
