@@ -70,3 +70,7 @@ body {
   height: 40px;
   background: #6c8cff;
 }
+
+.nav-link {
+  margin-right: 50px;
+}
