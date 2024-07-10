@@ -29,7 +29,6 @@ function submitDone(event) {
       message: event.target.elements.message.value.trim(),
     });
   }
-  form.reset();
   localStorage.removeItem(localStorageKey);
 }
 
