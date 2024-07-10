@@ -1,41 +1,33 @@
-<!-- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <title>Form</title>
-    <link rel="stylesheet" href="../css/styles.css" />
+    <link rel="stylesheet" href="./css/styles.css" />
   </head>
   <body>
-    <a href="../index.html">Go back</a> -->
+    <a href="./index.html" class="nav-link">Go back</a>
 
-<form class="feedback-form" autocomplete="off">
-  <label>
-    Email
-    <input type="email" name="email" autofocus />
-  </label>
-  <label>
-    Message
-    <textarea name="message" rows="8"></textarea>
-  </label>
-  <button type="submit">Submit</button>
-</form>
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
+    <form class="feedback-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="8"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
 
-<script type="module" src="./main.js"></script>
-<!-- ---------------------------------------PROBLEM W ZAŁADOWANIU PLIKU JS -------------------------->
-<!-- <script type="module" src="./02-form.js"></script> -->
-<!-- </body>
-</html> -->
+    <script type="module" src="./partials/02-form.js"></script>
+  </body>
+</html>
 
 <!-- ---------------------------------------PONIŻEJ WKLEJAM ZAWARTOŚĆ JS ŻEBY DZIAŁAŁO -------------------------->
-<script>
+<!-- <script>
   const form = document.querySelector(`form.feedback-form`);
   form.addEventListener('submit', submitDone);
 
@@ -77,5 +69,5 @@
 
   email.value = saveFormData.email ?? ``;
   message.value = saveFormData.message ?? ``;
-</script>
+</script> -->
 <!-- ----------------------------------------------------------------------------------------------------------->
