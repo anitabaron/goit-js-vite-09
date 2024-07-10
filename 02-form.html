@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Form</title>
+    
+    <script type="module" crossorigin src="/goit-js-vite-09/commonHelpers2.js"></script>
+    <link rel="modulepreload" crossorigin href="/goit-js-vite-09/assets/modulepreload-polyfill-3cfb730f.js">
+    <link rel="stylesheet" href="/goit-js-vite-09/assets/styles-20b37157.css">
+  </head>
+  <body>
+    <a href="./index.html" class="nav-link">Go back</a>
+
+    <form class="feedback-form" autocomplete="off">
+      <label>
+        Email
+        <input type="email" name="email" autofocus />
+      </label>
+      <label>
+        Message
+        <textarea name="message" rows="8"></textarea>
+      </label>
+      <button type="submit">Submit</button>
+    </form>
+
+    
+  </body>
+</html>
+
+<!-- ---------------------------------------PONIŻEJ WKLEJAM ZAWARTOŚĆ JS ŻEBY DZIAŁAŁO -------------------------->
+<!-- <script>
+  const form = document.querySelector(`form.feedback-form`);
+  form.addEventListener('submit', submitDone);
+
+  const email = document.querySelector(`form.feedback-form > label > input`);
+  const message = document.querySelector(
+    `form.feedback-form > label > textarea`
+  );
+  const localStorageKey = 'feedback-form-state';
+
+  form.addEventListener('input', event => {
+    const { name, value } = event.target;
+    const currentData = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
+    currentData[name] = value.trim();
+    localStorage.setItem(localStorageKey, JSON.stringify(currentData));
+  });
+
+  function submitDone(event) {
+    event.preventDefault();
+    if (
+      event.target.elements.email.value.trim() === '' ||
+      event.target.elements.message.value === ''
+    ) {
+      alert('All form fields must be filled in');
+    } else if (
+      event.target.elements.email.value.trim() !== '' ||
+      event.target.elements.message.value !== ''
+    ) {
+      console.log('Submit done!');
+      console.log({
+        email: event.target.elements.email.value.trim(),
+        message: event.target.elements.message.value.trim(),
+      });
+    }
+    form.reset();
+    localStorage.removeItem(localStorageKey);
+  }
+
+  const saveFormData = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
+
+  email.value = saveFormData.email ?? ``;
+  message.value = saveFormData.message ?? ``;
+</script> -->
+<!-- ----------------------------------------------------------------------------------------------------------->
