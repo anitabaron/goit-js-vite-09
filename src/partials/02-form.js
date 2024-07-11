@@ -16,20 +16,18 @@ function submitDone(event) {
   event.preventDefault();
   if (
     event.target.elements.email.value.trim() === '' ||
-    event.target.elements.message.value === ''
+    event.target.elements.message.value.trim() === ''
   ) {
-    alert('All form fields must be filled in');
-  } else if (
-    event.target.elements.email.value.trim() !== '' ||
-    event.target.elements.message.value !== ''
-  ) {
-    console.log('Submit done!');
-    console.log({
-      email: event.target.elements.email.value.trim(),
-      message: event.target.elements.message.value.trim(),
-    });
+    return alert('All form fields must be filled in');
   }
+  console.log('Submit done!');
+  console.log({
+    email: event.target.elements.email.value.trim(),
+    message: event.target.elements.message.value.trim(),
+  });
+  form.reset();
   localStorage.removeItem(localStorageKey);
+  alert(`Good job!\nSubmit done!`);
 }
 
 const saveFormData = JSON.parse(localStorage.getItem(localStorageKey)) ?? {};
